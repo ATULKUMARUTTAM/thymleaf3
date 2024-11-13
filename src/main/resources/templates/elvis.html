@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Elvis</title>
+</head>
+<body>
+<h2>Elvis</h2>
+<p th:text="${isAdmin}? 'Welcome Admin!!!' : 'Welcome Guest!!!'"></p>
+
+<h2>IF</h2>
+<p th:if="${isAdmin}">HELLO ADMIN!!!!</p>
+
+<h2>IF-ELSE</h2>
+<p th:if="${Role} =='Admin'">Welcome ADMIN!!!!</p>
+<p th:unless="${Role} =='Admin'">Welcome GUEST!!!!</p>
+
+<h2>Switch Case!!</h2>
+<div th:switch="${Role}">
+    <p th:case="Admin">You Are An Admin!!</p>
+    <p th:case="Guest">You Are A Guest!!</p>
+    <p th:case="*">You have No Role!!</p>
+</div>
+</body>
+</html>

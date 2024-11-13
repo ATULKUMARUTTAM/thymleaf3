@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Each Page</title>
+</head>
+<body>
+<h2>Each Loop</h2>
+<div th:each = "name : ${stringList}">
+<p th:text ="${name}"></p>
+</div>
+
+<h2>Each Loop Status variable</h2>
+<div th:each = "name, status : ${stringList}">
+    <p th:text ="${status.index}+' '+${name}"></p>
+</div>
+
+
+<h2>Each Loop Status ODD EVEN variable</h2>
+<div th:each = "name, status : ${stringList}">
+    <p   th:style = "${status.odd} ? 'color:red' : 'color:green'"
+         th:text ="${status.index}+' '+${name}"></p>
+</div>
+
+
+<h2>For Loop</h2>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <script type="text/javascript" th:src="@{js/main.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{css/main.css}"></link>
+</head>
+<body>
+<p>Welcome To Home Page</p>
+<p><span th:text="${msg}"></span></p>
+<button id="click-button" onclick="main()">Click Here</button>
+
+<!-- Include the header fragment from the fragment.html -->
+<!--<div th:replace="~{demo.html :: header}"></div>-->
+
+<footer id="parent-footer" th:include="fragment/demo :: header">
+    <h1 id="from-fragment">From Home</h1>
+</footer>
+
+</body>
+</html>
